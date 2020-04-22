@@ -177,6 +177,7 @@ class BBoxHead(nn.Module):
             det_bboxes, det_labels = multiclass_nms(bboxes, scores,
                                                     cfg.score_thr, cfg.nms,
                                                     cfg.max_per_img,
+                                                    rois = rois,
                                                     roi_feats=roi_feats  # 新加入的参数   为了得到预测框所对应的map
                                                     )
             print("------------------------------------bbox_head.py--------------------------------------------------")

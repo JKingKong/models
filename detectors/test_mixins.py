@@ -116,14 +116,15 @@ class BBoxTestMixin(object):
         # bbox_pred的shape：box数 * 8
 
         #读取文件的roi
-        #roi_feats = torch.load("/content/mmdetection/Z108_roi_filter.pt")
+        #roi_feats = torch.load("/content/mmdetection/Z108_roi_feats.pt")
+        #roi_feats = torch.load("/content/mmdetection/Z108_roi_feats.pt")
 
         cls_score, bbox_pred = self.bbox_head(roi_feats)
         img_shape = img_metas[0]['img_shape']
         scale_factor = img_metas[0]['scale_factor']
         # det_bboxes的shape:NMS抑制后的数量 * 5
         det_bboxes, det_labels = self.bbox_head.get_det_bboxes(
-            rois,
+            rois,               # 原来的参数 必须保证load的.pt文件和这个维度一致，所以这里也需要保存后load
             cls_score,
             bbox_pred,
             img_shape,
