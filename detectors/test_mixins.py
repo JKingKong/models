@@ -155,17 +155,19 @@ class BBoxTestMixin(object):
         # print("--- called at line               ", sys._getframe().f_back.f_lineno)
         # print("===================****************=====================")
         # print()
-        print()
-        print("--------------------------------test_mixins.py------------------------------------------------------")
-        print("===roi_feats:",roi_feats.shape)
-        print()
-        print("===cls_score:",cls_score.shape)
-        print("===bbox_pred:",bbox_pred.shape)
-        print()
-        print("===det_bboxes:",det_bboxes.shape)
-        print("===det_labels:",det_labels.shape)
-        print("--------------------------------------------------------------------------------------")
-        print()
+
+
+        # print()
+        # print("--------------------------------test_mixins.py------------------------------------------------------")
+        # print("===roi_feats:",roi_feats.shape)
+        # print()
+        # print("===cls_score:",cls_score.shape)
+        # print("===bbox_pred:",bbox_pred.shape)
+        # print()
+        # print("===det_bboxes:",det_bboxes.shape)
+        # print("===det_labels:",det_labels.shape)
+        # print("--------------------------------------------------------------------------------------")
+        # print()
         return det_bboxes, det_labels
 
     def aug_test_bboxes(self, feats, img_metas, proposal_list, rcnn_test_cfg):

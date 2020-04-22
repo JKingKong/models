@@ -183,12 +183,13 @@ class BBoxHead(nn.Module):
                                                     bbox_pred = bbox_pred,
                                                     roi_feats=roi_feats  # 新加入的参数   为了得到预测框所对应的map
                                                     )
-            print("------------------------------------bbox_head.py--------------------------------------------------")
-            print("===bboxes:", bboxes.shape)
-            print("===scores:", scores.shape)
-            print("===det_bboxes:", det_bboxes.shape)
-            print("===det_labels:", det_labels.shape)
-            print("--------------------------------------------------------------------------------------")
+            # print("------------------------------------bbox_head.py--------------------------------------------------")
+            # print("===bboxes:", bboxes.shape)
+            # print("===scores:", scores.shape)
+            # print("===det_bboxes:", det_bboxes.shape)
+            # print("===det_labels:", det_labels.shape)
+            # print("--------------------------------------------------------------------------------------")
+
             return det_bboxes, det_labels
 
     @force_fp32(apply_to=('bbox_preds', ))
