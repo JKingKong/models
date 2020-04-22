@@ -114,6 +114,10 @@ class BBoxTestMixin(object):
         # mmdet/models/bbox_heads/convfc_bbox_head.py  下的forward方法的返回值 分类过后的分数,回归框后的参数
         # cls_score的shape: box数 * 2 (第0列是背景分数,会被直接忽略)
         # bbox_pred的shape：box数 * 8
+
+        #读取文件的roi
+        #roi_feats = torch.load("/content/mmdetection/Z108_roi_filter.pt")
+
         cls_score, bbox_pred = self.bbox_head(roi_feats)
         img_shape = img_metas[0]['img_shape']
         scale_factor = img_metas[0]['scale_factor']
